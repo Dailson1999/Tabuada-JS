@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função Tabuada</title>
+</head>
+<body>
+
+    <h1>Funcoes - tabuada</h1>
+    
+    <button onclick="MostrarTabuada()">Mostrar Tabuada</button>
+    <button onclick="LimparTabuada()">Limpar Tabuada</button>
+    <div id="output"></div>
+
+    <script>
+        
+        const output = document.getElementById("output");
+
+        function MostrarTabuada(){
+            //pede um numero para o usuario e recebe string, mas já passo para float
+            let numeroSolicitado = parseFloat(prompt("Digite um numero"));
+            let contador = 0;
+            let msg = "";
+            while(contador <=1000){
+                msg += `${numeroSolicitado} x ${contador} = ${(contador*numeroSolicitado)}<br>`;
+                contador++;
+            }
+            //fora do while o processamento é mais rápido
+            output.innerHTML = msg;
+        }
+
+        function LimparTabuada(){
+            output.innerText = "";
+        }
+    </script>
+    
+</body>
+</html>
